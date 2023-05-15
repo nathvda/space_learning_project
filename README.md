@@ -16,9 +16,11 @@ This repository is made for me to try and improve my knowledge of GraphQL and Re
 
 ## Comments 
 
+- The project will not be very interesting and consists of simple cards, but I do it for sole learning purposes. 
+
 ## Known Issues
 
-No issue at the moment.
+- No desktop version so the cards stretch all the way.
 
 ## Changelog
 
