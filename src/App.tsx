@@ -1,7 +1,10 @@
 import "./App.css";
 import { useQuery, gql } from "@apollo/client";
+import { useState } from 'react';
+import { Outlet } from 'react-router-dom';
 
-import { Disclosure } from '@headlessui/react';
+import { Disclosure,Dialog } from '@headlessui/react';
+import Navigation from "./Navigation";
 
 const GET_LOCATIONS = gql`
   query GetLocations {
@@ -27,6 +30,7 @@ const GET_LOCATIONS = gql`
 
 function App() {
   const { loading, error, data } = useQuery(GET_LOCATIONS);
+  const [isOpen, setIsOpen] = useState(true);
 
   if (loading) return <p className="text-blue-900">Wait a second</p>;
   if (error) return <p className="text-red-900">Error:{error.message}</p>;
@@ -41,6 +45,17 @@ function App() {
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut ducimus vero architecto fugiat est laboriosam rem saepe quas aliquam voluptas earum deserunt perspiciatis porro recusandae nisi labore, explicabo quia modi.
           </Disclosure.Panel>
         </Disclosure></div>
+
+        <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
+        <Dialog.Panel>
+          <Dialog.Description>We don't know what's in there.</Dialog.Description>
+
+
+        <p>?????</p>
+
+        <button onClick={() => setIsOpen(false)}>Deactivate</button>
+        </Dialog.Panel>
+        </Dialog>
       <h2 className="text-5xl text-center">
         Just trying to build some stuff in here. 🚀
       </h2>
@@ -118,7 +133,10 @@ function App() {
           )
         )}
       </div>
+      <Navigation/>
+      <Outlet/>
     </div>
+
   );
 }
 
