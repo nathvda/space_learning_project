@@ -1,6 +1,8 @@
 import "./App.css";
 import { useQuery, gql } from "@apollo/client";
 
+import { Disclosure } from '@headlessui/react';
+
 const GET_LOCATIONS = gql`
   query GetLocations {
     rockets {
@@ -31,6 +33,14 @@ function App() {
 
   return (
     <div className="m-8">
+        <div className="bg-slate-400 rounded-md p-4"><Disclosure>
+          <Disclosure.Button className="bg-blue-600 text-white font-bold p-4 rounded-sm">
+            ???
+          </Disclosure.Button>
+          <Disclosure.Panel className="bg-white p-4 rounded-md mt-4">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut ducimus vero architecto fugiat est laboriosam rem saepe quas aliquam voluptas earum deserunt perspiciatis porro recusandae nisi labore, explicabo quia modi.
+          </Disclosure.Panel>
+        </Disclosure></div>
       <h2 className="text-5xl text-center">
         Just trying to build some stuff in here. 🚀
       </h2>

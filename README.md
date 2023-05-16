@@ -10,7 +10,7 @@ This repository is made for me to try and improve my knowledge of GraphQL and Re
 - Vite
 - React-router-dom
 - Zustand
-- HeadlessUI
+- HeadlessUI (Disclosures)
 
 ## Others
 
